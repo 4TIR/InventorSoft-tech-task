@@ -1,0 +1,20 @@
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav mode="side" opened class="side-nav">
+   <div class="inner-container">
+     <div>
+       <div>
+         <img src="assets/taskmanager.png" alt="" width="100%">
+       </div>
+       <div *ngFor="let menuItem of menuItems" class="link-container">
+         <a [routerLink]="menuItem.link" >{{ menuItem.name }}</a>
+       </div>
+     </div>
+     <div>
+       <button mat-button color="warn" (click)="logout()">Logout</button>
+     </div>
+   </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="side-nav-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

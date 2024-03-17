@@ -1,0 +1,41 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+.side-nav{
+  width: 250px;
+  padding: 20px;
+}
+.side-nav-content{
+  padding: 20px;
+}
+.inner-container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.side-nav .link-container {
+  padding: 10px 20px;
+}
+
+.side-nav .link-container:hover {
+  background-color: #ccc;
+}
+
+.side-nav .link-container a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.side-nav .link-container a:hover {
+  color: #000;
+  font-weight: bold;
+}

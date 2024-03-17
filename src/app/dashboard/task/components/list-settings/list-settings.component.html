@@ -1,0 +1,15 @@
+<button mat-icon-button
+        type="button"
+        [matMenuTriggerFor]="menu">
+  <mat-icon aria-hidden="false" aria-label="" fontIcon="more_horizontal"></mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item color="secondary" (click)="edit.emit()">
+    <mat-icon aria-hidden="false" aria-label="" fontIcon="edit"></mat-icon>
+    <span>Edit task</span>
+  </button>
+  <button mat-menu-item color="warn" (click)="remove.emit()">
+    <mat-icon aria-hidden="false" aria-label="" fontIcon="delete"></mat-icon>
+    <span>Remove task</span>
+  </button>
+</mat-menu>

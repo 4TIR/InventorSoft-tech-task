@@ -1,0 +1,14 @@
+.login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+mat-form-field{
+  width: 300px;
+}
+.sign-up-link{
+  margin-top: 30px;
+}

@@ -1,0 +1,41 @@
+<div>
+  <h2 mat-dialog-title>{{ isEdit ? 'Edit Task' : 'Add Task' }}</h2>
+  <mat-dialog-content>
+    <form [formGroup]="taskForm" >
+      <mat-form-field>
+        <input matInput formControlName="name" placeholder="Task Name">
+        <mat-error *ngIf="taskForm.controls['name'].invalid && (taskForm.controls['name'].dirty || taskForm.controls['name'].touched)">
+          Task Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Assigned User:</mat-label>
+        <mat-select formControlName="assignedUser" placeholder="Select User">
+          <mat-option *ngFor="let user of userList" [value]="user.id">{{ user.name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="taskForm.controls['assignedUser'].invalid && (taskForm.controls['assignedUser'].dirty || taskForm.controls['assignedUser'].touched)">
+          Assigned User is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea matInput formControlName="description" placeholder="Description"></textarea>
+        <mat-error *ngIf="taskForm.controls['description'].invalid && (taskForm.controls['description'].dirty || taskForm.controls['description'].touched)">
+          Description is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>State</mat-label>
+        <mat-select formControlName="state">
+          <mat-option *ngFor="let state of states" [value]="state">{{ state }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onAdd()">{{ isEdit ? 'Save' : 'Add' }}</button>
+    <button mat-button (click)="onCancel()">Cancel</button>
+  </mat-dialog-actions>
+</div>
